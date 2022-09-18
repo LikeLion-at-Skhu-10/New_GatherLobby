@@ -18,3 +18,6 @@ def lobby_detail(request):
 
 def lobby_edit(request):
     return render(request, "lobby_edit.html")
+
+def lobby_chat(request):
+    return render(request, "lobby_chat.html")

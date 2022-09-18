@@ -10,4 +10,5 @@ urlpatterns = [
     path('lobby_read/', views.lobby_read, name = "lobby_read"),
     path('lobby_detail/', views.lobby_detail, name = "lobby_detail"),
     path('lobby_edit/', views.lobby_edit, name = "lobby_edit"),
+    path('lobby_chat/', views.lobby_chat, name = "lobby_chat"),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
