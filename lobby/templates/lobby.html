@@ -1,1 +1,68 @@
-lobby
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+	<link rel="stylesheet" href="{% static 'css/lobby.css' %}">
+{% endblock %}
+
+{% block nav_title %}
+<div class="nav2">
+	<h1>Gather Lobby</h1>
+</div>
+{% endblock %}
+
+{% block nav_hr %}
+	<hr style="border: 0.05vw solid #3A6C22; background-color: #3A6C22; width: 100%; margin: 0 auto;">
+{% endblock %}
+
+{% block content %}
+
+<div class="lobby_all">
+	<div class="lobby_top">
+		<table>
+			<thead class="list_thead">
+				<tr>
+					<th>음식점 이름</th>
+					<th>인원수</th>
+					<th>COMMENT</th>
+					<th>시간</th>
+					<th>추천수</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>배떡 41타워점</td>
+					<td>1/4</td>
+					<td>이미 시켰는데 같이 드실</td>
+					<td>10분 후</td>
+					<td>파리공원 야외테이블</td>
+				</tr>
+				<tr>
+					<td>새마을식당 당-</td>
+					<td>1/3</td>
+					<td>주문만 같이하고 로비</td>
+					<td>30분 후</td>
+					<td>유엔빌리지</td>
+				</tr>
+				<tr>
+					<td>원조쌈밥 양평-</td>
+					<td>2/3</td>
+					<td>로비에서 음식만 따로</td>
+					<td>46분 후</td>
+					<td>연세하숙집</td>
+				</tr>
+				<tr>
+					<td>반포식스 오목-</td>
+					<td>1/3</td>
+					<td>3명 모이면 바로</td>
+					<td>60분 후</td>
+					<td>행복기숙사</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<a href="lobby_read" id="go_list">전체보기 >></a>
+	<div class="lobby_bottom"></div>
+</div>
+
+{% endblock %}
