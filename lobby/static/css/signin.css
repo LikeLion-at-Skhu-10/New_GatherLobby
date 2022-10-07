@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2)
+      format("woff2"),
+      url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff)
+      format("woff"),
+      url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf)
+      format("opentype");
+}
+
+html {
+  font-family: 'Noto Sans KR';
+  height: 100%;
+}
+
+body {
+  margin:0;
+  padding:0;
+  background: linear-gradient(rgb(89, 129, 89), rgb(191, 231, 191));
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 50px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+  
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+  
+.login-box .user-box {
+  position: relative;
+}
+  
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1.5px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+  
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #fff;
+  font-size: 12px;
+}
+
+.makeaccount {
+  margin-top: 19%;
+  position: absolute;
+  margin-left: 61px;
+  font-size: 13px;
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+.makeaccount:hover {
+  text-decoration: underline;
+}
+
+.btn1 {
+  margin-left: 90px;
+  border:0;
+  background: rgb(236, 255, 167);
+  color: #000;
+  font-weight: bolder;
+  border-radius: 100px;
+  width: 150px;
+  height: 50px;
+  font-size: 18px;
+  position: absolute;
+  top: 79%;
+  left: 8%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn1:hover {
+  background: rgb(255, 237, 202);
+  box-shadow: 0 15px 25px rgba(37, 57, 38, 0.6);
+}
