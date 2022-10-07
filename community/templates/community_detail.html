@@ -1,1 +1,38 @@
-community_detail
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>community_detail</title>
+</head>
+<body>
+    <h2>Detail</h2><br></br>
+    <h4>제목 : {{community.title}}</h4>
+    <p>내용 : {{community.content}}</p>
+
+    <br>
+    <a href="{% url 'community_edit' blog.id %}"> 수정하기</a>
+    <a href="{% url 'community_delete' blog.id %}"> 삭제하기</a>
+    <br>
+    <br>
+    {% for comment in community.comments.all %}
+        <p>{{ comment.text }}</p>
+    {% endfor %}
+    {% if community.image %}
+        <img src="{{ community.image.url }}" width = "250" height = "250" alt="image">
+    {% endif %}
+    <br>
+    <br>
+    <form method="POST" action="{% url 'community_detail' community.id %}">
+        {% csrf_token %}
+        <p>{{ form.as_p }}</p>
+        <input type="submit" value="submit">
+        <br>
+        {% for comment in blog.comments.all %}
+            <p>{{ comment.text }}</p>
+        {% endfor %}
+        <br>
+    </form>
+</body>
+</html>

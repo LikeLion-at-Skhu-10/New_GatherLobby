@@ -1,1 +1,17 @@
-lobby_read
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Lobby read</h2>
+                {% for lobbys in lobbys.all %}
+                <h3>제목 :<a href="{% url 'lobby_detail' lobbys.id %}">{{lobbys.title}}</a></h3>
+                <p>내용 : {{lobbys.content}}</p>
+                <hr>
+                {% endfor %}          
+</body>
+</html>
