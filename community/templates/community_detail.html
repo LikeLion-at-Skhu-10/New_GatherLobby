@@ -7,13 +7,13 @@
     <title>community_detail</title>
 </head>
 <body>
-    <h2>Detail</h2><br></br>
+    <h2>Community Detail</h2><br></br>
     <h4>제목 : {{community.title}}</h4>
     <p>내용 : {{community.content}}</p>
 
     <br>
-    <a href="{% url 'community_edit' blog.id %}"> 수정하기</a>
-    <a href="{% url 'community_delete' blog.id %}"> 삭제하기</a>
+    <a href="{% url 'community_edit' community.id %}"> 수정하기</a>
+    <a href="{% url 'community_delete' community.id %}"> 삭제하기</a>
     <br>
     <br>
     {% for comment in community.comments.all %}
