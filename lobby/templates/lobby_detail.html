@@ -24,6 +24,8 @@
     <br>
     {% for reply in lobby.replys.all %}
         <p>{{ reply.text }}</p>
+        <a href="{% url 'edit_reply' lobby.id reply.id %}">수정</a>
+        <a href="{% url 'delete_reply' lobby.id reply.id %}">삭제</a>
     {% endfor %}
     <br>
     <form method="POST" action="{% url 'lobby_detail' lobby.id %}">
