@@ -62,7 +62,13 @@
 		</table>
 	</div>
 	<a href="lobby_read" id="go_list">전체보기 >></a>
-	<div class="lobby_bottom"></div>
+	<div class="lobby_bottom">
+		{% for lobbys in lobbys.all %}
+            <h3>제목 :<a href="{% url 'lobby_detail' lobbys.id %}">{{lobbys.title}}</a></h3>
+            <p>내용 : {{lobbys.content}}</p>
+            <hr>
+        {% endfor %} 
+	</div>
 </div>
 
 {% endblock %}
