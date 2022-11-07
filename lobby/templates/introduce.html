@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block link %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	{% block link %}
 	<link rel="stylesheet" href="{% static 'css/introduce.css' %}">
-{% endblock %}
+	{% endblock %}
+</head>
 
+<body>
 {% block nav_title %}
 <div class="nav2">
 	<h1>Gather Lobby</h1>
@@ -16,6 +22,22 @@
 {% endblock %}
 
 {% block content %}
-
-
+	<div class="container">
+		<ul class="slider-container simple-list" id="slider">
+			<li class="slide">
+				<img src="{% static 'img/logo1.png' %}">
+			</li>
+			<li class="slide">
+				<img src="{% static 'img/logo2.png' %}">
+			</li>
+			<li class="slide">
+				<img src="{% static 'img/logo3.jpg' %}">
+			</li>
+		</ul>
+		<a href="#" id="prev"></a>
+		<a href="#" id="next"></a>
+	</div>
+	<script src="{% static 'js/introduce.js' %}"></script>
 {% endblock %}
+</body>
+</html>
