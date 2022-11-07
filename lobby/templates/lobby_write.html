@@ -1,1 +1,19 @@
-lobby_write
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lobby write</title>
+</head>
+<body>
+    <h2>lobby - write</h2>
+
+    <form method ="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type ="submit">작성</button>
+    </form>
+    
+</body>
+</html>
