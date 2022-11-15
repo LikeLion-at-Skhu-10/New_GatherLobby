@@ -1,32 +1,27 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
+from django.contrib.auth.forms import AuthenticationForm
+from account.forms import CustomUserCreationForm, CustomUserChangeForm
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .models import Profile
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
 
 # Create your views here.
 
 #회원가입
-def signup(request) :
+def signup(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if request.POST["password1"] == request.POST["password2"]:
-            user = User.objects.create_user(
-                username = request.POST["username"],
-                password = request.POST["password1"]
-            )
-            nickname = request.POST["nickname"],
-            email = request.POST["email"]
-            profile = Profile(user=user, nickname=nickname, email=email)
-            profile.save()
+        form = CustomUserCreationForm(request.POST, request.FILES)
+        if form.is_valid():
+            user = form.save()
             auth.login(request, user)
             return redirect('introduce')
         else:
-            return render(request, 'signup.html')
+            return render(request, 'signup.html', {'form':form})
     else:
-        form = UserCreationForm()
-        return render(request, 'signup.html')
-
+        form = CustomUserCreationForm()
+        return render(request, 'signup.html', {'form':form})
 #로그인
 def signin(request) :
     if request.method == 'POST':
@@ -45,6 +40,18 @@ def signin(request) :
 def logout(request):
     auth.logout(request)
     return redirect('introduce')
+
+def edit_password(request) :
+    if request.method == "POST" :
+        form =PasswordChangeForm(request.user, request.POST)
+        if form.is_valid() :
+            user = form.save()
+            update_session_auth_hash(request, user)
+            return redirect('introduce')
+    else :
+        form = PasswordChangeForm(request.user)
+    return render(request, 'edit_password.html',{'form':form})
+
 
 
 def signin_searchid(request):

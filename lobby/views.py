@@ -52,6 +52,22 @@ def lobby_edit(request, id):
         form =LobbyForm(instance=lobby)
     return render(request, "lobby_edit.html", {'form':form})
 
+def edit_reply(request, id, reply_id):
+    post = get_object_or_404(Lobby, id=id)
+    reply = get_object_or_404(Reply, id=reply_id)
+    form = ReplyForm(instance=reply)
+    if request.method == "POST":
+        edit_reply_form = ReplyForm(request.POST, instance = reply)
+        if edit_reply_form.is_valid():
+            edit_reply_form.save()
+            return redirect('lobby_detail', id)
+    return render(request, 'edit_reply.html', {'form':form, 'post':post, 'reply':reply})
+
+def delete_reply(request, id, reply_id):
+    reply = get_object_or_404(Reply, id=reply_id)
+    reply.delete()
+    return redirect('lobby_detail',id)
+
 def lobby_delete(request,id):
     lobby = get_object_or_404(Lobby, id=id)
     lobby.delete()

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% load static %}
 
 <!DOCTYPE html>
@@ -39,3 +40,10 @@
     </div>
 </body>
 </html>
+=======
+<form method = "POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">가입</button>
+</form>
+>>>>>>> origin/yeye
