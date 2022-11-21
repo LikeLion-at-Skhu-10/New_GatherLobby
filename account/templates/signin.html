@@ -8,34 +8,23 @@
     <title>login</title>
 </head>
 <body>
-<<<<<<< HEAD
     <div class="login-box">
         <h2>Login</h2>
-        <form>
+
+        <form method="POST">
+            {% csrf_token %}
             <div class="user-box">
-                <input type="text" name="" required="">
-                <label>ID</label>
+                ID: {{form.username}}
             </div>
 
             <div class="user-box">
-                <input type="password" name="" required="">
-                <label>Password</label>
+                Password: {{form.password}} 
             </div>
-        </form>
             <input type="submit" value="Sign in" class="btn1">
+        </form>
             <a href="{% url 'signup' %}" class="makeaccount">아이디가 없으신가요? Sign up</a>
             <br>
             <br>
     </div>
-=======
-    <h2>Login</h2>
-    <form method="POST" action="{% url 'signin' %}">
-        {% csrf_token %}
-        {{ form.as_p}}
-        <button type="submit">로그인</button>
-        <br>
-        <a href="{% url 'signup' %}">회원가입</button>
-    </form>
->>>>>>> origin/yeye
 </body>
 </html>
