@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+	
+</body>
+</html>
 {% block link %} 
 	<link rel="stylesheet" href="{% static 'css/lobby.css' %}">
 {% endblock %}
@@ -12,7 +21,9 @@
 {% endblock %}
 
 {% block nav_hr %}
-	<hr style="border: 0.05vw solid #3A6C22; background-color: #3A6C22; width: 100%; margin: 0 auto;">
+	<a href="lobby">
+		<hr style="border: 0.05vw solid #3A6C22; background-color: #3A6C22; width: 100%; margin: 0 auto;">
+	</a>
 {% endblock %}
 
 {% block content %}
@@ -71,13 +82,13 @@
                 <ul class="slides-box">
 
                     <li class="slide-li">
-                        <img class="slide-img" src="{% static 'img/lobby/slideimg6.jpg' %}">
+                        <img class="slide-img" src="{% static 'img/lobby/slideimg1.png' %}">
                     </li>
                     <li class="slide-li">
-                        <img class="slide-img" src="{% static 'img/lobby/slideimg2.jpg' %}">
+                        <img class="slide-img" src="{% static 'img/lobby/slideimg2.png' %}">
                     </li>
                     <li class="slide-li">
-                        <img class="slide-img" src="{% static 'img/lobby/slideimg3.jpg' %}">
+                        <img class="slide-img" src="{% static 'img/lobby/slideimg3.png' %}">
                     </li>
                 </ul>
 

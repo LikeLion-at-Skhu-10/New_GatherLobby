@@ -22,6 +22,7 @@ def signup(request):
     else:
         form = CustomUserCreationForm()
         return render(request, 'signup.html', {'form':form})
+        
 #로그인
 def signin(request) :
     if request.method == 'POST':
