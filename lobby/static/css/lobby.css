@@ -138,10 +138,10 @@ td {
 }
 
 .prev:hover{
-	background: linear-gradient(90deg, #3A6C22, #ffffff00);
+	background: linear-gradient(90deg, #1c1c1cd8, #ffffff00);
 }
 .next:hover{ 
-    background: linear-gradient(90deg, #ffffff00, #3A6C22);
+    background: linear-gradient(90deg, #ffffff00, #1c1c1cd8);
 }
 
 .prev{
