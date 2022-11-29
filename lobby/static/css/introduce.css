@@ -1,38 +1,62 @@
-* {
-    box-sizing: border-box;
-}
-
 .nav2 h1{
     font-size: 30pt;
     font-family: "Bigshot One";
     color: #CCD8C7;
 }
 
-body {
-    margin-top: 10em;
-}
-
-.container {
+#slideShow {
+    width: 700px;
+    height: 400px;
     position: relative;
-    width: 100%;
+    margin: 40px auto;
     overflow: hidden;
 }
 
-.slider-container {
+.slides {
     position: absolute;
-    width: 100%;
+    left: 0;
+    top: 0;
+    width: 100px; 
+    transition: 0.7s ease-out;
+} 
+
+.slides li:not(:last-child) {
+    float: left;
+    margin-right: 100px;
 }
 
-.slide {
+.slides li {
+    float: left;
+}
+
+.controller span {
     position: absolute;
-    width: 100%;
-    padding: 0 10%;
-    top: 50%;
-    transform: translateY(-50%);
+    background-color: transparent;
+    color: black;
     text-align: center;
-    overflow: hidden;
+    border-radius: 50%;
+    padding: 20px 30px;
+    top: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+  
+.controller span:hover {
+    background-color: rgba(128, 128, 128, 0.11);
 }
 
-.simple-list {
-    list-style: ;
+.prev {
+    left: 10px;
+}
+  
+.prev:hover {
+    transform: translateX(-10px);
+}
+  
+.next {
+    right: 10px;
+}
+  
+.next:hover {
+    transform: translateX(10px);
 }

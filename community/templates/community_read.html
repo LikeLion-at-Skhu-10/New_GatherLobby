@@ -10,6 +10,7 @@
     <h2>community read</h2>
                 {% for communitys in communitys.all %}
                 <h3>제목 :<a href="{% url 'community_detail' communitys.id %}">{{communitys.title}}</a></h3>
+        
                 <p>내용 : {{communitys.content}}</p>
                 <hr>
                 {% endfor %}          

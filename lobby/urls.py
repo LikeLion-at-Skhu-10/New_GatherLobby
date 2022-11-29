@@ -11,5 +11,7 @@ urlpatterns = [
     path('lobby_detail/<str:id>', views.lobby_detail, name = "lobby_detail"),
     path('lobby_edit/<str:id>', views.lobby_edit, name = "lobby_edit"),
     path('lobby_delete/<str:id>', views.lobby_delete, name = "lobby_delete"),
+     path('edit_reply/<str:id>/<str:reply_id>/', views.edit_reply, name='edit_reply'),
+    path('delete_reply/<str:id>/<str:reply_id>/', views.delete_reply, name='delete_reply'),
     path('lobby_chat/', views.lobby_chat, name = "lobby_chat"),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
