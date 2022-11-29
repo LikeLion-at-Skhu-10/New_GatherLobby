@@ -8,6 +8,20 @@ class Lobby(models.Model):
     content = models.TextField()
     image = models.ImageField(upload_to='images/', blank=True)
 
+    # choice Field
+    food_category_CHOICES = (
+        ('bunsik', '분식'),
+        ('korean', '한식'),
+        ('western', '양식'),
+        ('hambuger', '햄버거'),
+        ('salad', '샐러드'),
+        ('dessert', '디저트'),
+        ('chicken', '치킨'),
+        ('bread', '빵'),
+    )
+    food_category = models.CharField(max_length=20, choices=food_category_CHOICES, default='bunsik')
+
+
     
 
     def __str__(self):

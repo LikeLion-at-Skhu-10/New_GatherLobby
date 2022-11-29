@@ -5,37 +5,35 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css'%}">
-    <title>signup</title>
+    <title>sign up</title>
 </head>
 <body>
     <div class="signup-box">
-        <h2>Signup</h2>
-        <form>
+        <h2>Sign up</h2>
+
+        <form action="" method="POST">
+            {% csrf_token %}
             <div class="user-box">
-                <input type="Id" name="" required="">
-                <label>ID</label>
+                ID : {{form.username}}
             </div>
 
             <div class="user-box">
-                <input type="Name" name="" required="">
-                <label>Nick-Name</label>
+                Nick-Name : {{form.nickname}}
             </div>
 
             <div class="user-box">
-                <input type="Email" name="" required="">
-                <label>Email</label>
+                Password : {{form.password1}}
             </div>
 
             <div class="user-box">
-                <input type="password" name="" required="">
-                <label>Password</label>
+                Password2 : {{form.password2}}
             </div>
             <br>
             <br>
             <input type="submit" value="OK" class="btn1">
             <br>
-            <a href="{% url 'signin' %}" class="gotosignin">회원가입이 되어있으신가요? sign in</a>
         </form>
+        <a href="{% url 'signin' %}" class="gotosignin">회원가입이 되어있으신가요? sign in</a>
     </div>
 </body>
 </html>
