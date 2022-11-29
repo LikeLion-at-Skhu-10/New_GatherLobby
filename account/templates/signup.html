@@ -1,1 +1,49 @@
-signup
+<<<<<<< HEAD
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css'%}">
+    <title>sign up</title>
+</head>
+<body>
+    <div class="signup-box">
+        <h2>Sign up</h2>
+        <form>
+            <div class="user-box">
+                <input type="Id" name="" required="">
+                <label>ID</label>
+            </div>
+
+            <div class="user-box">
+                <input type="Name" name="" required="">
+                <label>Nick-Name</label>
+            </div>
+
+            <div class="user-box">
+                <input type="Email" name="" required="">
+                <label>Email</label>
+            </div>
+
+            <div class="user-box">
+                <input type="password" name="" required="">
+                <label>Password</label>
+            </div>
+            <br>
+            <br>
+            <input type="submit" value="OK" class="btn1">
+            <br>
+            <a href="{% url 'signin' %}" class="gotosignin">회원가입이 되어있으신가요? sign in</a>
+        </form>
+    </div>
+</body>
+</html>
+=======
+<form method = "POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">가입</button>
+</form>
+>>>>>>> origin/yeye

@@ -1,0 +1,153 @@
+/* .nav_menu_m {
+    grid-column: 2;
+    display: flex;
+    align-items: center; 
+    justify-self: center;
+    margin-right: 4vw;
+	gap: 4.5vw;
+} */
+
+.nav2 h1{
+    font-size: 30pt;
+    font-family: "Bigshot One";
+    color: #3A6C22;
+}
+
+.lobby_all { /*오른쪽 공백 왜 조금 있지...?*/
+	width: 100%;
+}
+
+.lobby_top {
+	display: flex;
+	text-align: center;
+	margin: 0;
+	justify-content: center;
+	width: 80vw;
+}
+
+table {
+	margin-top: 3vw;
+}
+
+tr {
+	border-radius: 10%;
+}
+
+th {
+    padding-top: 1vw;
+    padding-bottom: 1.3vw;
+    text-align: center;
+    font-size: 1.1vw;
+    color: #784800;
+	font-family: "Noto Sans KR";
+	font-weight: 500;
+}
+
+tbody tr {
+	border-radius: 30%;
+	background-color: #F2F6EE;
+	border-bottom: 6px solid #ffffff;
+	font-family: "Noto Sans KR";
+}
+
+td {
+    padding: 1vw 4.7vw 1vw 4.7vw;
+    text-align: center;
+    font-size: 1vw;
+    color: rgb(111, 111, 111);
+	white-space:nowrap; /* 한글 세로로 출력되는 오류 수정 */
+}
+
+#go_list {
+	text-align: right;
+	display: block;
+	margin-right: 1vw;
+	margin-top: 1vw;
+	color: rgb(111, 111, 111);
+	font-family: "Noto Sans KR";
+	font-size: 1.3vw;
+	text-decoration: none;
+}
+
+.lobby_bottom {
+    display: grid;
+	grid-template-columns: 10vw 38vw 4vw 38vw 10vw;
+	justify-content: center;
+    align-self: center;
+	margin-top: 10vh;
+}
+
+.slide {
+    text-align: center;
+    width: 100%;
+	grid-column: 2;
+	padding-left: 2vw;
+}
+
+.slide-li {
+    list-style-type:none;
+}
+
+.slide span {
+    font-size: 1vw;
+    color: gray;
+}
+
+.slide-container {
+    width: 38vw;
+    height: 20vw;
+    position: relative; 
+    /* margin: 50px auto; */
+    margin: 0 auto;
+    overflow: hidden;
+    
+}
+
+.slides-box {
+    padding: 0px;
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    width: 9700px; 
+    transition: left 0.5s ease-out;
+
+}
+
+.slides-box li:not(:last-child){
+    float: left;
+}
+
+
+.slide-img {
+    width: 38vw;
+    height: 20vw;
+}
+
+.controller span{
+    position:absolute; 
+    background-color: transparent; 
+    color: #3A6C22;
+    text-align: center; 
+    padding: 20px; 
+    font-size: 1em; 
+    cursor: pointer;
+	height: 20vw;
+	display: flex;
+	align-items: center;
+	width: 15vw;
+}
+
+.prev:hover{
+	background: linear-gradient(90deg, #3A6C22, #ffffff00);
+}
+.next:hover{ 
+    background: linear-gradient(90deg, #ffffff00, #3A6C22);
+}
+
+.prev{
+    left: 0px;
+}
+
+.next{
+    right: 0px;
+}

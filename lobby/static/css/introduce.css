@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+.nav2 h1{
+    font-size: 30pt;
+    font-family: "Bigshot One";
+    color: #CCD8C7;
+}
+
+body {
+    margin-top: 10em;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-container {
+    position: absolute;
+    width: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    padding: 0 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    overflow: hidden;
+}
+
+.simple-list {
+    list-style: ;
+}

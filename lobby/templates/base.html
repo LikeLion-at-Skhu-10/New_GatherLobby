@@ -1,1 +1,79 @@
-base
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+	{% block link %}
+	{% endblock %}
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+	<title>Gather Lobby</title>
+
+</head>
+
+<body>
+	<section>
+	<!-- header -->
+	<div id="header">
+		<div class="nav-container">
+			<div class="nav3__none"></div>
+			{% block nav_title %}
+			{% endblock %}
+
+			<div class="nav1">
+				<label for="checkbox" class="hbmenu">
+					<input type="checkbox" id="checkbox" onclick="menutoggle()">
+					<span class="line line-main"></span>
+					<span class="line line-split"></span>
+				</label>
+				<div id="menu__container" class="nmenu">
+					<div id="menu__box" class="">
+						<p class="menu_title">Gather Lobby</p>
+						<div class="menu_style0">
+							<p class="menu_Sign_in"><a href="{% url 'signin' %}">Sign in</a></p>
+							<p class="menu_login">로그인을 해주세요!</p>
+							<p class="menu_Sign_up"><a href="{% url 'signup' %}">Sign up</a></p>
+							<div class="menu_style1">
+								<p class="menu_LOBBY"><a href="{% url 'lobby' %}">LOBBY</a></p>
+								<p class="menu_Community">Community</p>
+								<p class="menu_page"><a href="#">My page</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% block nav_hr %}
+		{% endblock %}
+	</div>
+	<div>
+		{% block content %}
+		{% endblock %}
+	</div>
+    </section>
+
+	<script>
+		var menu = document.getElementById("menu__container");
+		var toggle = document.getElementById("menu__box");
+		var checkbox = document.getElementById("checkbox");
+
+		function menutoggle() {
+			document.getElementById("menu__box").classList.toggle("menu");
+			menu.style.display = "block";
+			if (document.getElementById("menu__box").className == "") {
+				menu.style.display = "none";
+			}
+		}
+
+		window.onclick = function (event) {
+			if (event.target == menu) {
+				menu.style.display = "none";
+				toggle.className = "";
+				checkbox.checked = false;
+			}
+		}
+	</script>
+</body>
+
+</html>
